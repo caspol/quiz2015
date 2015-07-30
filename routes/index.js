@@ -12,7 +12,11 @@ router.get('/', function(req, res) {
 
 router.get('/author',authorController.author);
 
-router.get('/quizes/question', quizController.question);
-router.get('/quizes/answer', quizController.answer);
+//router.get('/quizes/question', quizController.question);
+//router.get('/quizes/answer', quizController.answer);
+
+router.get('/quizes',                      quizController.index);
+router.get('/quizes/:quizId(\\d+)',        quizController.show);
+router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
 
 module.exports = router;
